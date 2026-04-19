@@ -16,7 +16,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold text-red-500 mb-4">STRONG FORM</h3>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_strong-form-preview/artifacts/fl8koenp_Screenshot_20260419_204910_Word.jpg" 
+              alt="Strong Form Logo" 
+              className="h-20 w-auto object-contain mb-4 brightness-110"
+            />
             <p className="text-gray-400 mb-6 leading-relaxed">
               Specialist formwork contractor operating across NSW, ACT and Victoria. 
               Building trust through quality work.

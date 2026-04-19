@@ -32,9 +32,11 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-red-600">
-              STRONG FORM
-            </div>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_strong-form-preview/artifacts/fl8koenp_Screenshot_20260419_204910_Word.jpg" 
+              alt="Strong Form Logo" 
+              className="h-12 md:h-16 w-auto object-contain"
+            />
           </div>
 
           {/* Desktop Navigation */}
