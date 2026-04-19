@@ -16,32 +16,32 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <img 
-              src="https://customer-assets.emergentagent.com/job_strong-form-preview/artifacts/fl8koenp_Screenshot_20260419_204910_Word.jpg" 
-              alt="Strong Form Logo" 
-              className="h-20 w-auto object-contain mb-4 brightness-110"
-            />
+            <img
+              src="https://customer-assets.emergentagent.com/job_strong-form-preview/artifacts/fl8koenp_Screenshot_20260419_204910_Word.jpg"
+              alt="Strong Form Logo"
+              className="h-20 w-auto object-contain mb-4 brightness-110" />
+
             <p className="text-gray-400 mb-6 leading-relaxed">
               Specialist formwork contractor operating across NSW, ACT and Victoria. 
               Building trust through quality work.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors duration-300"
-              >
+              <a
+                href="#"
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors duration-300">
+
                 <Facebook className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors duration-300"
-              >
+              <a
+                href="#"
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors duration-300">
+
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors duration-300"
-              >
+              <a
+                href="#"
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors duration-300">
+
                 <Twitter className="w-5 h-5" />
               </a>
             </div>
@@ -54,32 +54,32 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('home')}
-                  className="text-gray-400 hover:text-red-500 transition-colors duration-200"
-                >
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-200">
+
                   Home
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => scrollToSection('about')}
-                  className="text-gray-400 hover:text-red-500 transition-colors duration-200"
-                >
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-200">
+
                   About Us
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => scrollToSection('how-we-work')}
-                  className="text-gray-400 hover:text-red-500 transition-colors duration-200"
-                >
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-200">
+
                   How We Work
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => scrollToSection('whs')}
-                  className="text-gray-400 hover:text-red-500 transition-colors duration-200"
-                >
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-200">
+
                   WHS & OHS
                 </button>
               </li>
@@ -103,21 +103,21 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-4">
               <li>
-                <a 
-                  href="tel:+61234567890" 
-                  className="flex items-start text-gray-400 hover:text-red-500 transition-colors duration-200"
-                >
+                <a
+                  href="tel:+61234567890"
+                  className="flex items-start text-gray-400 hover:text-red-500 transition-colors duration-200">
+
                   <Phone className="w-5 h-5 mr-3 mt-1 flex-shrink-0" />
-                  <span>+61 234 567 890</span>
+                  <span>+61 0421 446 175</span>
                 </a>
               </li>
               <li>
-                <a 
-                  href="mailto:info@strongform.com.au" 
-                  className="flex items-start text-gray-400 hover:text-red-500 transition-colors duration-200"
-                >
+                <a
+                  href="mailto:info@strongform.com.au"
+                  className="flex items-start text-gray-400 hover:text-red-500 transition-colors duration-200">
+
                   <Mail className="w-5 h-5 mr-3 mt-1 flex-shrink-0" />
-                  <span>info@strongform.com.au</span>
+                  <span>connect@strongform.com.au</span>
                 </a>
               </li>
               <li>
@@ -149,8 +149,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 export default Footer;
