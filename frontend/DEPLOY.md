@@ -4,32 +4,35 @@ Professional website for Strong Form Pty Ltd, a specialist formwork contractor o
 
 ## 🚀 Quick Deploy to Vercel (FREE)
 
-### Option 1: Deploy via GitHub (Recommended)
+### Option 1: Deploy via Vercel Dashboard (Easiest)
 
-1. **Push this repository to GitHub**
-2. **Go to [Vercel](https://vercel.com)** and sign up with GitHub
-3. **Click "New Project"**
-4. **Import your GitHub repository**
-5. **Configure:**
-   - Framework Preset: Create React App
-   - Root Directory: `frontend`
-   - Build Command: `yarn build`
-   - Output Directory: `build`
-6. **Click Deploy**
+1. **Go to [Vercel](https://vercel.com)** and sign up with GitHub/Email (free)
+2. **Click "Add New..." → "Project"**
+3. **Import your repository** or drag and drop the `frontend` folder
+4. **Vercel will auto-detect Create React App**
+5. **Override settings if needed:**
+   - Build Command: `yarn build` (should be auto-detected)
+   - Output Directory: `build` (should be auto-detected)
+   - Install Command: `yarn install`
+6. **Click "Deploy"**
+7. **Wait 2-3 minutes** - Your site will be live!
 
 ### Option 2: Deploy via Vercel CLI
 
 ```bash
-# Install Vercel CLI
+# Install Vercel CLI globally
 npm i -g vercel
 
 # Navigate to frontend directory
 cd frontend
 
-# Deploy
+# Login to Vercel
+vercel login
+
+# Deploy (follow prompts)
 vercel
 
-# For production deployment
+# For production deployment with custom domain
 vercel --prod
 ```
 
