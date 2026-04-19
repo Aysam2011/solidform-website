@@ -32,24 +32,24 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="tel:+61234567890">
+            <a href="mailto:connect@strongform.com.au?subject=Quote Request">
               <Button 
                 size="lg" 
                 className="bg-red-600 hover:bg-red-700 text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
               >
-                <Phone className="w-5 h-5 mr-2" />
+                <Mail className="w-5 h-5 mr-2" />
                 Get Quote
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
-            <a href="mailto:info@strongform.com.au">
+            <a href="tel:+610421446175">
               <Button 
                 size="lg" 
                 variant="outline"
                 className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-red-600 px-8 py-6 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 hover:scale-105"
               >
-                <Mail className="w-5 h-5 mr-2" />
-                Email Us
+                <Phone className="w-5 h-5 mr-2" />
+                Call Us
               </Button>
             </a>
           </div>
