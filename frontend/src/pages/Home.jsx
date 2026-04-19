@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import Statistics from '../components/Statistics';
 import AboutUs from '../components/AboutUs';
 import HowWeWork from '../components/HowWeWork';
 import WHS from '../components/WHS';
@@ -11,6 +12,7 @@ const Home = () => {
     <div className="min-h-screen bg-white">
       <Header />
       <Hero />
+      <Statistics />
       <AboutUs />
       <HowWeWork />
       <WHS />
