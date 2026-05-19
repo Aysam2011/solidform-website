@@ -12,7 +12,7 @@ const Hero = () => {
           alt="Construction Site"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-blue-900/70 to-gray-900/80"></div>
       </div>
 
       {/* Content */}
@@ -20,7 +20,7 @@ const Hero = () => {
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Building Trust with{' '}
-            <span className="text-red-500">Quality Formwork</span>
+            <span className="text-blue-400">Quality Formwork</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
             We'll help get the job done!
@@ -32,10 +32,10 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="mailto:connect@strongform.com.au?subject=Quote Request">
+            <a href="mailto:connect@solidform.com.au?subject=Quote Request">
               <Button 
                 size="lg" 
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
               >
                 <Mail className="w-5 h-5 mr-2" />
                 Get Quote
@@ -46,7 +46,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-red-600 px-8 py-6 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 hover:scale-105"
+                className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 hover:scale-105"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Call Us

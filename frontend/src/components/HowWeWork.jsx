@@ -32,7 +32,7 @@ const HowWeWork = () => {
           {/* Content Side */}
           <div className="order-2 md:order-1">
             <div className="mb-6">
-              <span className="text-red-600 font-semibold text-sm uppercase tracking-wider">
+              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">
                 Our Process
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-6">
@@ -51,9 +51,9 @@ const HowWeWork = () => {
               We are solution focused in getting the job done, and ensuring that client satisfaction is achieved.
             </p>
 
-            <div className="bg-red-50 border-l-4 border-red-600 p-6 rounded-r-xl mb-8">
+            <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl mb-8">
               <div className="flex items-start">
-                <CheckCircle className="w-6 h-6 text-red-600 mr-3 flex-shrink-0 mt-1" />
+                <CheckCircle className="w-6 h-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
                 <p className="text-gray-800 leading-relaxed">
                   To ensure the highest standard of work is achieved within strict time frames, Mohammed and 
                   his supervisors allocate a large proportion of their time working and managing projects 
@@ -70,8 +70,8 @@ const HowWeWork = () => {
                   key={index}
                   className="flex items-start p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
-                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <principle.icon className="w-6 h-6 text-red-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <principle.icon className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">{principle.title}</h3>
@@ -90,10 +90,10 @@ const HowWeWork = () => {
                 alt="How We Work"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-red-900/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent"></div>
             </div>
             {/* Decorative Element */}
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-red-600 rounded-2xl -z-10"></div>
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-600 rounded-2xl -z-10"></div>
           </div>
         </div>
       </div>

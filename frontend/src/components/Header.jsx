@@ -32,40 +32,42 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src="https://customer-assets.emergentagent.com/job_strong-form-preview/artifacts/fl8koenp_Screenshot_20260419_204910_Word.jpg" 
-              alt="Strong Form Logo" 
-              className="h-12 md:h-16 w-auto object-contain"
-            />
+            <div className="flex flex-col">
+              <div className="text-2xl font-bold tracking-tight">
+                <span className="text-blue-600">SOLID</span>
+                <span className="text-gray-900"> FORM</span>
+              </div>
+              <div className="text-xs text-gray-600 tracking-wide">PTY LTD</div>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection('home')}
-              className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium"
+              className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium"
+              className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
             >
               About Us
             </button>
             <button
               onClick={() => scrollToSection('how-we-work')}
-              className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium"
+              className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
             >
               How We Work
             </button>
             <button
               onClick={() => scrollToSection('whs')}
-              className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium"
+              className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
             >
               WHS & OHS
             </button>
-            <a href="tel:+61234567890" className="flex items-center text-gray-700 hover:text-red-600 transition-colors duration-200">
+            <a href="tel:+610421446175" className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
               <Phone className="w-4 h-4 mr-1" />
               <span className="font-medium">Contact</span>
             </a>
@@ -74,7 +76,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-gray-700 hover:text-red-600 transition-colors"
+            className="md:hidden text-gray-700 hover:text-blue-600 transition-colors"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -86,29 +88,29 @@ const Header = () => {
             <nav className="flex flex-col space-y-4">
               <button
                 onClick={() => scrollToSection('home')}
-                className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium text-left"
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium text-left"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection('about')}
-                className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium text-left"
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium text-left"
               >
                 About Us
               </button>
               <button
                 onClick={() => scrollToSection('how-we-work')}
-                className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium text-left"
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium text-left"
               >
                 How We Work
               </button>
               <button
                 onClick={() => scrollToSection('whs')}
-                className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium text-left"
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium text-left"
               >
                 WHS & OHS
               </button>
-              <a href="tel:+61234567890" className="flex items-center text-gray-700 hover:text-red-600 transition-colors duration-200">
+              <a href="tel:+610421446175" className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
                 <Phone className="w-4 h-4 mr-2" />
                 <span className="font-medium">Contact</span>
               </a>

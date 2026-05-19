@@ -16,10 +16,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <img
-              src="https://customer-assets.emergentagent.com/job_strong-form-preview/artifacts/fl8koenp_Screenshot_20260419_204910_Word.jpg"
-              alt="Strong Form Logo"
-              className="h-20 w-auto object-contain mb-4 brightness-110" />
+            <div className="flex flex-col mb-4">
+              <div className="text-2xl font-bold tracking-tight">
+                <span className="text-blue-400">SOLID</span>
+                <span className="text-white"> FORM</span>
+              </div>
+              <div className="text-xs text-gray-400 tracking-wide">PTY LTD</div>
+            </div>
 
             <p className="text-gray-400 mb-6 leading-relaxed">
               Specialist formwork contractor operating across NSW, ACT and Victoria. 
@@ -28,19 +31,19 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors duration-300">
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
 
                 <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors duration-300">
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
 
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors duration-300">
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
 
                 <Twitter className="w-5 h-5" />
               </a>
@@ -54,7 +57,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('home')}
-                  className="text-gray-400 hover:text-red-500 transition-colors duration-200">
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
 
                   Home
                 </button>
@@ -62,7 +65,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('about')}
-                  className="text-gray-400 hover:text-red-500 transition-colors duration-200">
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
 
                   About Us
                 </button>
@@ -70,7 +73,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('how-we-work')}
-                  className="text-gray-400 hover:text-red-500 transition-colors duration-200">
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
 
                   How We Work
                 </button>
@@ -78,7 +81,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('whs')}
-                  className="text-gray-400 hover:text-red-500 transition-colors duration-200">
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
 
                   WHS & OHS
                 </button>
@@ -104,8 +107,8 @@ const Footer = () => {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:+61234567890"
-                  className="flex items-start text-gray-400 hover:text-red-500 transition-colors duration-200">
+                  href="tel:+610421446175"
+                  className="flex items-start text-gray-400 hover:text-blue-400 transition-colors duration-200">
 
                   <Phone className="w-5 h-5 mr-3 mt-1 flex-shrink-0" />
                   <span>+61 0421 446 175</span>
@@ -113,11 +116,11 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="mailto:info@strongform.com.au"
-                  className="flex items-start text-gray-400 hover:text-red-500 transition-colors duration-200">
+                  href="mailto:connect@solidform.com.au"
+                  className="flex items-start text-gray-400 hover:text-blue-400 transition-colors duration-200">
 
                   <Mail className="w-5 h-5 mr-3 mt-1 flex-shrink-0" />
-                  <span>connect@strongform.com.au</span>
+                  <span>connect@solidform.com.au</span>
                 </a>
               </li>
               <li>
@@ -136,13 +139,13 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              Copyright © 2018 Strong Form Pty Ltd. All rights reserved.
+              Copyright © 2018 Solid Form Pty Ltd. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                 Terms of Service
               </a>
             </div>
