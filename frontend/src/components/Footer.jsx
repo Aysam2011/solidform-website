@@ -107,20 +107,20 @@ const Footer = () => {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:+610421446175"
+                  href="tel:+610431017079"
                   className="flex items-start text-gray-400 hover:text-blue-400 transition-colors duration-200">
 
                   <Phone className="w-5 h-5 mr-3 mt-1 flex-shrink-0" />
-                  <span>+61 0421 446 175</span>
+                  <span>+61 0431 017 079</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:connect@solidform.com.au"
+                  href="mailto:Solid_form@hotmail.com"
                   className="flex items-start text-gray-400 hover:text-blue-400 transition-colors duration-200">
 
                   <Mail className="w-5 h-5 mr-3 mt-1 flex-shrink-0" />
-                  <span>connect@solidform.com.au</span>
+                  <span>Solid_form@hotmail.com</span>
                 </a>
               </li>
               <li>

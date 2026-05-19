@@ -32,7 +32,7 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="mailto:connect@solidform.com.au?subject=Quote Request">
+            <a href="mailto:Solid_form@hotmail.com?subject=Quote Request">
               <Button 
                 size="lg" 
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
@@ -42,7 +42,7 @@ const Hero = () => {
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
-            <a href="tel:+610421446175">
+            <a href="tel:+610431017079">
               <Button 
                 size="lg" 
                 variant="outline"

@@ -67,7 +67,7 @@ const Header = () => {
             >
               WHS & OHS
             </button>
-            <a href="tel:+610421446175" className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
+            <a href="tel:+610431017079" className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
               <Phone className="w-4 h-4 mr-1" />
               <span className="font-medium">Contact</span>
             </a>
@@ -110,7 +110,7 @@ const Header = () => {
               >
                 WHS & OHS
               </button>
-              <a href="tel:+610421446175" className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
+              <a href="tel:+610431017079" className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200">
                 <Phone className="w-4 h-4 mr-2" />
                 <span className="font-medium">Contact</span>
               </a>
