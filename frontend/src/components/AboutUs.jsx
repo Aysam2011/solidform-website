@@ -56,8 +56,8 @@ const AboutUs = () => {
             
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               Solid Form is a specialist formwork contractor that operates across NSW, ACT and now Victoria. 
-              Owner and Director Mohammed Alazawi, has over 10 years' experience in this field and offers 
-              superior and high-quality formwork construction services at competitive rates.
+              With over 10 years' experience in this field, we offer superior and high-quality formwork 
+              construction services at competitive rates.
             </p>
             
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">

@@ -55,8 +55,8 @@ const HowWeWork = () => {
               <div className="flex items-start">
                 <CheckCircle className="w-6 h-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
                 <p className="text-gray-800 leading-relaxed">
-                  To ensure the highest standard of work is achieved within strict time frames, Mohammed and 
-                  his supervisors allocate a large proportion of their time working and managing projects 
+                  To ensure the highest standard of work is achieved within strict time frames, our 
+                  supervisors allocate a large proportion of their time working and managing projects 
                   directly onsite. This provides you with clear and direct communication lines to ensure that 
                   the job is managed and completed proactively.
                 </p>
