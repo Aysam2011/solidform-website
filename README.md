@@ -2,26 +2,44 @@
 
 **This is a frontend-only React application.**
 
-## Vercel Deployment
+## 🚀 Vercel Deployment Instructions
 
-This repository contains both frontend and backend directories, but **only the frontend should be deployed to Vercel**.
+### IMPORTANT: Configure Root Directory
 
-### Quick Deploy Steps:
+When deploying to Vercel, you **MUST** set the Root Directory to `frontend`:
 
-1. **Import this repository** to Vercel
-2. Vercel will automatically use the `vercel.json` configuration
-3. The build will only process the `frontend` directory
-4. **No additional configuration needed** - just click Deploy!
+1. **Go to Vercel Dashboard**
+2. **Import your GitHub repository**
+3. **Before clicking Deploy, configure these settings:**
+   - **Root Directory**: `frontend` ⚠️ (CRITICAL - Set this!)
+   - **Framework Preset**: Create React App (auto-detected)
+   - **Build Command**: `yarn build` (auto-detected)
+   - **Output Directory**: `build` (auto-detected)
+   - **Install Command**: `yarn install --legacy-peer-deps`
+4. **Click Deploy**
 
-### Project Structure:
+### Alternative: Use Vercel CLI
+
+```bash
+cd frontend
+vercel
+# When prompted, confirm the settings
+```
+
+### Why Set Root Directory?
+
+This repository contains both `frontend/` and `backend/` directories. Vercel needs to know to build ONLY the frontend React app. Setting Root Directory to `frontend` tells Vercel to ignore everything else.
+
+## Project Structure:
 ```
 /
-├── frontend/          # React app (Deploy this to Vercel)
+├── frontend/          # React app (Deploy from here!)
 │   ├── src/
 │   ├── public/
-│   └── package.json
-├── backend/           # FastAPI (Ignored by Vercel)
-├── vercel.json        # Vercel config (frontend only)
+│   ├── package.json
+│   ├── .npmrc         # Handles dependency conflicts
+│   └── vercel.json    # SPA routing config
+├── backend/           # FastAPI (Not deployed to Vercel)
 └── .vercelignore      # Ignores backend files
 ```
 
