@@ -1,4 +1,5 @@
 {
+  "buildCommand": "yarn install --legacy-peer-deps && yarn build",
   "rewrites": [
     {
       "source": "/(.*)",
