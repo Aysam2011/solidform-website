@@ -1,9 +1,7 @@
-# Netlify Build Configuration
 [build]
   publish = "build"
   command = "npm run build"
 
-# SPA Redirect Rule - Required for React Router
 [[redirects]]
   from = "/*"
   to = "/index.html"
