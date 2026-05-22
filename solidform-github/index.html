@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solid Form Pty Ltd - Specialist formwork contractors operating across NSW, ACT & Victoria">
+    <meta name="keywords" content="formwork, construction, NSW, ACT, Victoria, concrete, labour hire">
+    <title>Solid Form Pty Ltd - Formwork Contractors & Labour Hire</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #1d4ed8; }
+        
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 10 0 L 0 0 0 10' fill='none' stroke='white' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex flex-col">
+                    <div class="text-2xl font-bold">
+                        <span class="text-blue-600">SOLID</span>
+                        <span class="text-gray-900"> FORM</span>
+                    </div>
+                    <div class="text-xs text-gray-600">PTY LTD</div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">About</a>
+                    <a href="#how-we-work" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">How We Work</a>
+                    <a href="#safety" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Safety</a>
+                    <a href="tel:+610431017079" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">📞 Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden py-4 border-t">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600">About</a>
+                    <a href="#how-we-work" class="text-gray-700 hover:text-blue-600">How We Work</a>
+                    <a href="#safety" class="text-gray-700 hover:text-blue-600">Safety</a>
+                    <a href="tel:+610431017079" class="text-gray-700 hover:text-blue-600">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
+        <div class="absolute inset-0 opacity-20 hero-pattern"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                Building Trust with <span class="text-blue-400">Quality Formwork</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8">We'll help get the job done!</p>
+            <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+                Specialist formwork contractor operating across NSW, ACT and Victoria.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:Solid_form@hotmail.com?subject=Quote Request" 
+                   class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all hover:scale-105 shadow-lg">
+                    ✉️ Get Quote →
+                </a>
+                <a href="tel:+610431017079" 
+                   class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg font-semibold transition-all hover:scale-105">
+                    📞 Call Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 via-blue-700 to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="group">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4 group-hover:bg-white/30 transition-all">
+                        <span class="text-3xl">🏆</span>
+                    </div>
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-2">10+</div>
+                    <div class="text-lg font-semibold text-white">Years Experience</div>
+                </div>
+
+                <div class="group">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4 group-hover:bg-white/30 transition-all">
+                        <span class="text-3xl">📍</span>
+                    </div>
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-2">3</div>
+                    <div class="text-lg font-semibold text-white">States Covered</div>
+                </div>
+
+                <div class="group">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4 group-hover:bg-white/30 transition-all">
+                        <span class="text-3xl">🛡️</span>
+                    </div>
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-2">100%</div>
+                    <div class="text-lg font-semibold text-white">Safety Compliant</div>
+                </div>
+
+                <div class="group">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4 group-hover:bg-white/30 transition-all">
+                        <span class="text-3xl">⏰</span>
+                    </div>
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-2">24/7</div>
+                    <div class="text-lg font-semibold text-white">Project Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Formwork Contractors & Labour Hire</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-6">About Us</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed text-center">
+                    Solid Form is a specialist formwork contractor that operates across NSW, ACT and now Victoria. 
+                    With over 10 years' experience in this field, we offer superior and high-quality formwork 
+                    construction services at competitive rates.
+                </p>
+                <p class="text-lg text-gray-700 mb-12 leading-relaxed text-center">
+                    Solid Form is a dynamic team that deliver capabilities of both conventional and modern formwork 
+                    systems with our highly-skilled formwork professionals who are motivated to deliver exceptional 
+                    and timely results.
+                </p>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors group">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-colors">
+                            <span class="text-3xl group-hover:scale-110 transition-transform">🏆</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">10+ Years Experience</h3>
+                        <p class="text-sm text-gray-600">Proven track record</p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors group">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-colors">
+                            <span class="text-3xl group-hover:scale-110 transition-transform">👥</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Expert Team</h3>
+                        <p class="text-sm text-gray-600">Highly-skilled professionals</p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors group">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-colors">
+                            <span class="text-3xl group-hover:scale-110 transition-transform">📈</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Quality Service</h3>
+                        <p class="text-sm text-gray-600">Superior construction</p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors group">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-colors">
+                            <span class="text-3xl group-hover:scale-110 transition-transform">🎯</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Timely Delivery</h3>
+                        <p class="text-sm text-gray-600">On-time results</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section id="how-we-work" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Our Process</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-6">How We Work</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed text-center">
+                    Our goal is to provide professional and efficient formwork services for our clients and 
+                    partners delivering high quality work with honesty and integrity.
+                </p>
+                <p class="text-lg text-gray-700 mb-12 leading-relaxed text-center">
+                    We achieve project completion within time frames and projected budget whilst maintaining strict 
+                    safety protocols. We are solution focused in getting the job done and ensuring client satisfaction.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-start p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-3xl mr-4">🎯</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-2">Quality Focus</h3>
+                            <p class="text-gray-600">Professional and efficient formwork services</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-3xl mr-4">⏰</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-2">On-Time Delivery</h3>
+                            <p class="text-gray-600">Project completion within time frames</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-3xl mr-4">🛡️</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-2">Safety First</h3>
+                            <p class="text-gray-600">Strict safety protocols maintained</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-3xl mr-4">💬</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-2">Direct Communication</h3>
+                            <p class="text-gray-600">Clear onsite management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section id="safety" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Safety First</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-6">WHS & OHS</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed text-center">
+                    Solid Form is committed to work health and safety for everyone in the workplace and job site 
+                    and are compliant with industry codes and insurance coverage.
+                </p>
+                <p class="text-lg text-gray-700 mb-12 leading-relaxed text-center">
+                    We adhere to the strictest of safety guidelines and procedures to incorporate both a systems 
+                    approach to safety as well as a person-centred approach to safety.
+                </p>
+
+                <div class="bg-blue-600 text-white p-8 rounded-xl mb-12 text-center">
+                    <div class="text-5xl mb-4">🛡️</div>
+                    <h3 class="text-2xl font-bold mb-3">Safety Commitment</h3>
+                    <p class="text-blue-50 leading-relaxed">
+                        Our commitment extends beyond compliance - we foster a culture where every team member 
+                        actively contributes to maintaining the highest safety standards on every project.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-start p-6 bg-gray-50 rounded-xl hover:bg-blue-50 transition-colors">
+                        <div class="text-3xl mr-4">👷</div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Industry Training</h4>
+                            <p class="text-gray-600">Comprehensive training programs</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start p-6 bg-gray-50 rounded-xl hover:bg-blue-50 transition-colors">
+                        <div class="text-3xl mr-4">🦺</div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">PPE Compliance</h4>
+                            <p class="text-gray-600">Proper protective equipment use</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start p-6 bg-gray-50 rounded-xl hover:bg-blue-50 transition-colors">
+                        <div class="text-3xl mr-4">📋</div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Safe Work Methods</h4>
+                            <p class="text-gray-600">Safe work method statements</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start p-6 bg-gray-50 rounded-xl hover:bg-blue-50 transition-colors">
+                        <div class="text-3xl mr-4">⚠️</div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Risk Mitigation</h4>
+                            <p class="text-gray-600">Proactive safety risk management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex flex-col mb-4">
+                        <div class="text-2xl font-bold">
+                            <span class="text-blue-400">SOLID</span>
+                            <span class="text-white"> FORM</span>
+                        </div>
+                        <div class="text-xs text-gray-400">PTY LTD</div>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Specialist formwork contractor operating across NSW, ACT and Victoria.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-blue-400 transition-colors">About</a></li>
+                        <li><a href="#how-we-work" class="text-gray-400 hover:text-blue-400 transition-colors">How We Work</a></li>
+                        <li><a href="#safety" class="text-gray-400 hover:text-blue-400 transition-colors">Safety</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li>Formwork Construction</li>
+                        <li>Labour Hire</li>
+                        <li>Conventional Systems</li>
+                        <li>Modern Formwork Systems</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="tel:+610431017079" class="flex items-start text-gray-400 hover:text-blue-400 transition-colors">
+                                <span class="mr-2">📞</span>
+                                <span>+61 0431 017 079</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:Solid_form@hotmail.com" class="flex items-start text-gray-400 hover:text-blue-400 transition-colors">
+                                <span class="mr-2">✉️</span>
+                                <span>Solid_form@hotmail.com</span>
+                            </a>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <span class="mr-2">📍</span>
+                            <span>NSW, ACT & Victoria<br>Australia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        Copyright © 2018 Solid Form Pty Ltd. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Header shadow on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
