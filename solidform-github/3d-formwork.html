@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solid Form Pty Ltd - Interactive 3D Formwork Inspection">
+    <title>Solid Form Pty Ltd - 3D Formwork Inspection</title>
+    
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            overflow-x: hidden;
+            background: #0f172a;
+            color: white;
+        }
+
+        /* 3D Canvas Container */
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+        }
+
+        /* Scroll Container */
+        #scroll-container {
+            position: relative;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* Scroll Sections */
+        .scroll-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0.3;
+            transition: opacity 0.5s ease;
+        }
+
+        .scroll-section.active {
+            opacity: 1;
+        }
+
+        /* Label Cards */
+        .label-card {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            max-width: 600px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            pointer-events: auto;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .label-card h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #60a5fa, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .label-card p {
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+        }
+
+        .scroll-arrow {
+            text-align: center;
+            font-size: 1rem;
+            color: #3b82f6;
+            animation: bounce 2s infinite;
+            margin-top: 1.5rem;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 1rem 2rem;
+            pointer-events: auto;
+        }
+
+        .top-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .top-nav a:hover {
+            color: #3b82f6;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .label-card {
+                padding: 1.5rem;
+            }
+
+            .label-card h2 {
+                font-size: 1.5rem;
+            }
+
+            .label-card p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <a href="index.html" style="font-size: 1.25rem; font-weight: 800;">
+            <span style="color: #3b82f6;">SOLID</span> FORM
+        </a>
+        <span style="margin-left: 0.5rem; font-size: 0.75rem; color: #94a3b8;">PTY LTD</span>
+    </div>
+
+    <!-- 3D Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- Scroll Content -->
+    <div id="scroll-container">
+        
+        <section class="scroll-section active" id="step-intro">
+            <div class="label-card">
+                <span class="badge">Overview</span>
+                <h2>Concrete Wall Formwork Assembly</h2>
+                <p>Scroll down to inspect the structural components engineered to retain temporary hydrostatic pressure during concrete casting.</p>
+                <div class="scroll-arrow">↓ Scroll to Begin</div>
+            </div>
+        </section>
+
+        <section class="scroll-section" id="step-plywood">
+            <div class="label-card">
+                <span class="badge">Component 01</span>
+                <h2>Phenolic Plywood Facing</h2>
+                <p>The primary barrier holding the liquid concrete shape. Coated with a smooth, moisture-resistant film to ensure a high-quality architectural concrete finish upon stripping.</p>
+            </div>
+        </section>
+
+        <section class="scroll-section" id="step-walers">
+            <div class="label-card">
+                <span class="badge">Component 02</span>
+                <h2>Vertical & Horizontal Walers</h2>
+                <p>A dual-axis support matrix. Vertical timbers distribute local panel loads directly into secondary horizontal double-steel channels to prevent flexing.</p>
+            </div>
+        </section>
+
+        <section class="scroll-section" id="step-ties">
+            <div class="label-card">
+                <span class="badge">Component 03</span>
+                <h2>High-Tensile Tie Rods & Nuts</h2>
+                <p>The critical tension elements running straight through the wall core. These lock opposing forms together, resisting bursting forces from heavy concrete pours.</p>
+            </div>
+        </section>
+
+        <section class="scroll-section" id="step-summary">
+            <div class="label-card">
+                <span class="badge">Complete Assembly</span>
+                <h2>Engineered Integrity</h2>
+                <p>All parts work systematically to guarantee alignment, dimensional tolerances, and onsite structural safety.</p>
+                <button class="reset-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Back to Top ↑</button>
+                <br><br>
+                <a href="index.html" style="color: #3b82f6; text-decoration: underline; pointer-events: auto;">← Return to Main Site</a>
+            </div>
+        </section>
+        
+    </div>
+
+    <script>
+        // Three.js Scene Setup
+        let scene, camera, renderer;
+        let formworkGroup;
+        let currentStep = 0;
+
+        function init() {
+            // Scene
+            scene = new THREE.Scene();
+            scene.fog = new THREE.Fog(0x0f172a, 10, 50);
+
+            // Camera
+            camera = new THREE.PerspectiveCamera(
+                45,
+                window.innerWidth / window.innerHeight,
+                0.1,
+                1000
+            );
+            camera.position.set(0, 5, 15);
+            camera.lookAt(0, 0, 0);
+
+            // Renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0x0f172a, 1);
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+            // Lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+            scene.add(ambientLight);
+
+            const directionalLight1 = new THREE.DirectionalLight(0x3b82f6, 0.8);
+            directionalLight1.position.set(5, 10, 5);
+            scene.add(directionalLight1);
+
+            const directionalLight2 = new THREE.DirectionalLight(0x60a5fa, 0.5);
+            directionalLight2.position.set(-5, 5, -5);
+            scene.add(directionalLight2);
+
+            // Create Formwork Assembly
+            createFormwork();
+
+            // Handle Window Resize
+            window.addEventListener('resize', onWindowResize);
+
+            // Scroll Handler
+            window.addEventListener('scroll', onScroll);
+
+            // Animation Loop
+            animate();
+        }
+
+        function createFormwork() {
+            formworkGroup = new THREE.Group();
+
+            // Plywood Panels (Component 01)
+            const plywoodGeometry = new THREE.BoxGeometry(6, 8, 0.2);
+            const plywoodMaterial = new THREE.MeshStandardMaterial({
+                color: 0xd4a373,
+                roughness: 0.7,
+                metalness: 0.1
+            });
+
+            const plywood1 = new THREE.Mesh(plywoodGeometry, plywoodMaterial);
+            plywood1.position.z = 2;
+            plywood1.name = 'plywood';
+
+            const plywood2 = new THREE.Mesh(plywoodGeometry, plywoodMaterial);
+            plywood2.position.z = -2;
+            plywood2.name = 'plywood';
+
+            // Vertical Walers (Component 02)
+            const walerGeometry = new THREE.BoxGeometry(0.3, 8, 0.3);
+            const walerMaterial = new THREE.MeshStandardMaterial({
+                color: 0x8b7355,
+                roughness: 0.8
+            });
+
+            for (let i = -2; i <= 2; i += 2) {
+                const waler1 = new THREE.Mesh(walerGeometry, walerMaterial);
+                waler1.position.set(i, 0, 2.3);
+                waler1.name = 'waler';
+
+                const waler2 = new THREE.Mesh(walerGeometry, walerMaterial);
+                waler2.position.set(i, 0, -2.3);
+                waler2.name = 'waler';
+
+                formworkGroup.add(waler1, waler2);
+            }
+
+            // Horizontal Steel Channels (Component 02)
+            const channelGeometry = new THREE.BoxGeometry(6.5, 0.25, 0.25);
+            const channelMaterial = new THREE.MeshStandardMaterial({
+                color: 0x708090,
+                roughness: 0.4,
+                metalness: 0.8
+            });
+
+            for (let i = -3; i <= 3; i += 3) {
+                const channel1 = new THREE.Mesh(channelGeometry, channelMaterial);
+                channel1.position.set(0, i, 2.4);
+                channel1.name = 'waler';
+
+                const channel2 = new THREE.Mesh(channelGeometry, channelMaterial);
+                channel2.position.set(0, i, -2.4);
+                channel2.name = 'waler';
+
+                formworkGroup.add(channel1, channel2);
+            }
+
+            // Tie Rods (Component 03)
+            const tieGeometry = new THREE.CylinderGeometry(0.08, 0.08, 4.8, 16);
+            const tieMaterial = new THREE.MeshStandardMaterial({
+                color: 0xc0c0c0,
+                roughness: 0.3,
+                metalness: 0.9
+            });
+
+            for (let x = -2; x <= 2; x += 2) {
+                for (let y = -3; y <= 3; y += 3) {
+                    const tie = new THREE.Mesh(tieGeometry, tieMaterial);
+                    tie.position.set(x, y, 0);
+                    tie.rotation.x = Math.PI / 2;
+                    tie.name = 'tie';
+                    formworkGroup.add(tie);
+                }
+            }
+
+            // Add Nuts on Tie Rods
+            const nutGeometry = new THREE.CylinderGeometry(0.15, 0.15, 0.1, 6);
+            const nutMaterial = new THREE.MeshStandardMaterial({
+                color: 0xa0a0a0,
+                roughness: 0.5,
+                metalness: 0.8
+            });
+
+            for (let x = -2; x <= 2; x += 2) {
+                for (let y = -3; y <= 3; y += 3) {
+                    const nut1 = new THREE.Mesh(nutGeometry, nutMaterial);
+                    nut1.position.set(x, y, 2.3);
+                    nut1.rotation.x = Math.PI / 2;
+                    nut1.name = 'tie';
+
+                    const nut2 = new THREE.Mesh(nutGeometry, nutMaterial);
+                    nut2.position.set(x, y, -2.3);
+                    nut2.rotation.x = Math.PI / 2;
+                    nut2.name = 'tie';
+
+                    formworkGroup.add(nut1, nut2);
+                }
+            }
+
+            formworkGroup.add(plywood1, plywood2);
+            scene.add(formworkGroup);
+        }
+
+        function onScroll() {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const sections = document.querySelectorAll('.scroll-section');
+
+            // Determine current section
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < windowHeight / 2 && rect.bottom > windowHeight / 2) {
+                    currentStep = index;
+                    sections.forEach(s => s.classList.remove('active'));
+                    section.classList.add('active');
+                }
+            });
+
+            // Update 3D scene based on scroll
+            updateFormworkDisplay();
+        }
+
+        function updateFormworkDisplay() {
+            // Rotate the entire assembly
+            formworkGroup.rotation.y = currentStep * 0.4;
+
+            // Highlight specific components based on step
+            formworkGroup.children.forEach(child => {
+                if (currentStep === 0) {
+                    // Overview - show everything
+                    child.visible = true;
+                    if (child.material) {
+                        child.material.opacity = 1;
+                        child.material.transparent = false;
+                    }
+                } else if (currentStep === 1) {
+                    // Plywood focus
+                    if (child.name === 'plywood') {
+                        child.visible = true;
+                        child.material.emissive = new THREE.Color(0x3b82f6);
+                        child.material.emissiveIntensity = 0.3;
+                    } else {
+                        child.visible = true;
+                        if (child.material) {
+                            child.material.transparent = true;
+                            child.material.opacity = 0.3;
+                        }
+                    }
+                } else if (currentStep === 2) {
+                    // Walers focus
+                    if (child.name === 'waler') {
+                        child.visible = true;
+                        child.material.emissive = new THREE.Color(0x3b82f6);
+                        child.material.emissiveIntensity = 0.3;
+                    } else {
+                        child.visible = true;
+                        if (child.material) {
+                            child.material.transparent = true;
+                            child.material.opacity = 0.3;
+                        }
+                    }
+                } else if (currentStep === 3) {
+                    // Ties focus
+                    if (child.name === 'tie') {
+                        child.visible = true;
+                        child.material.emissive = new THREE.Color(0x3b82f6);
+                        child.material.emissiveIntensity = 0.5;
+                    } else {
+                        child.visible = true;
+                        if (child.material) {
+                            child.material.transparent = true;
+                            child.material.opacity = 0.3;
+                        }
+                    }
+                } else {
+                    // Final view - show everything
+                    child.visible = true;
+                    if (child.material) {
+                        child.material.opacity = 1;
+                        child.material.transparent = false;
+                        child.material.emissive = new THREE.Color(0x000000);
+                    }
+                }
+            });
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Subtle rotation animation
+            formworkGroup.rotation.y += 0.002;
+
+            renderer.render(scene, camera);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
