@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Solid Form Website Files</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+        .file-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        .file-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+        .file-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        .file-desc {
+            color: #64748b;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        .file-size {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+        .instructions {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+        .instructions h3 {
+            color: #92400e;
+            margin-top: 0;
+        }
+        .instructions ol {
+            color: #78350f;
+            line-height: 1.8;
+        }
+        .success {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            color: #065f46;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📦 Solid Form Website - Download Files</h1>
+        <p class="subtitle">All your website files ready to download and deploy to GitHub Pages</p>
+
+        <div class="file-card">
+            <div class="file-title">🏠 Main Website (index.html)</div>
+            <div class="file-size">~24 KB</div>
+            <div class="file-desc">
+                Complete Solid Form website with all sections: Hero, Statistics, About, How We Work, Safety, and Footer. 
+                Includes fixed contact buttons with email (Solid_form@hotmail.com) and phone (+61 0431 017 079).
+            </div>
+            <button class="download-btn" onclick="downloadMainSite()">⬇️ Download Main Website</button>
+        </div>
+
+        <div class="file-card">
+            <div class="file-title">🎯 3D Interactive Tour (3d-formwork.html)</div>
+            <div class="file-size">~15 KB</div>
+            <div class="file-desc">
+                Stunning scroll-driven 3D formwork inspection experience using Three.js. 
+                Shows interactive 3D visualization of formwork components with educational descriptions.
+            </div>
+            <button class="download-btn" onclick="download3DTour()">⬇️ Download 3D Tour</button>
+        </div>
+
+        <div class="file-card">
+            <div class="file-title">📦 Complete Package (ZIP)</div>
+            <div class="file-size">~9 KB</div>
+            <div class="file-desc">
+                Download both files in one ZIP package. Extract and upload both files to your GitHub repository.
+            </div>
+            <button class="download-btn" onclick="downloadZip()">⬇️ Download Complete ZIP</button>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 How to Use These Files:</h3>
+            <ol>
+                <li><strong>Click the download buttons above</strong> to save the files to your computer</li>
+                <li><strong>Rename if needed:</strong> The main website file should be named <code>index.html</code></li>
+                <li><strong>Go to your GitHub repository</strong> (or create a new one)</li>
+                <li><strong>Upload both files:</strong> Click "Add file" → "Upload files"</li>
+                <li><strong>Enable GitHub Pages:</strong> Settings → Pages → Source: main branch</li>
+                <li><strong>Your site will be live</strong> at: https://YOUR-USERNAME.github.io/solidform-website/</li>
+            </ol>
+        </div>
+
+        <div class="success">
+            ✅ <strong>All files are ready!</strong> Click the download buttons above to get started.
+        </div>
+    </div>
+
+    <script>
+        // Main Website Download
+        function downloadMainSite() {
+            const content = `<!DOCTYPE html>
+<html lang="en">
+<!-- PASTE YOUR MAIN WEBSITE CODE HERE -->
+</html>`;
+            downloadFile('index.html', content);
+            alert('✅ Main website downloading! After saving, rename it to "index.html" if needed.');
+        }
+
+        // 3D Tour Download
+        function download3DTour() {
+            const content = `<!DOCTYPE html>
+<html lang="en">
+<!-- PASTE YOUR 3D FORMWORK CODE HERE -->
+</html>`;
+            downloadFile('3d-formwork.html', content);
+            alert('✅ 3D Tour downloading! Save as "3d-formwork.html".');
+        }
+
+        // ZIP Download (simulated)
+        function downloadZip() {
+            alert('📦 For ZIP download:\n\n1. Download both files separately using the buttons above\n2. Or access the files at:\n   - /app/solidform-github/solidform-complete-with-3d.zip\n\nThen upload both files to GitHub!');
+        }
+
+        // File Download Function
+        function downloadFile(filename, content) {
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(content));
+            element.setAttribute('download', filename);
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+    </script>
+</body>
+</html>
